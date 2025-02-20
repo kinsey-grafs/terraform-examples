@@ -1,0 +1,64 @@
+{
+    "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 48,
+  "links": [],
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 22,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "# 1. Getting Started with Grafana\n- Provisioning new users \n- Your internal observability team: #observability\n- Grafana Learning resources: https://grafana.com/tutorials/\n- Grafana Technical Support for troubleshooting Grafana issues: https://grafana.com/help/\n \n\n## Team Ownership\nTeams are responsible for the following areas.\n\n### Instrumentation\n- Instrumentation should be completed. If additional projects need to be added to Grafana, contact #observability team prior to adding any instrumentation.\n\n\nThe following topics are added as additional resources in this folder:\n\n### 2. Alerts\n\t- required golden signals\n\t- alert notifications destinations\n\t- naming conventions\n\n### 3. Dashboards\n\t- naming conventions\n\t- restoring a previous version \n\n### 4. Terraform\n\t- alerts, examples\n\t- other terraform resources: synthetics, dashboards\n\n### 5. API keys, service accounts\n\t- our processes for safekeeping and rotating sensitive tokens\n\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "11.6.0-82840",
+      "title": "",
+      "type": "text"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "1. Start here - Resources for Grafana & Overview of ownership",
+  "weekStart": ""
+}

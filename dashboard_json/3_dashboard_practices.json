@@ -1,0 +1,64 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 53,
+    "links": [],
+    "panels": [
+      {
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 20,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "# 3. Dashboards Practices\n\nEach team is responsible for setting up their own dashboards.If you have issues, please contact the hero in the #observability channel.\n\n## Naming conventions\n\nWe share this Grafana stack so we need to have conventions to keep things organized for all.\n\nNaming convention for Dashboards Folders is as follows:\n\nAugue maximus dapibus curae massa eget malesuada magna. Metus nullam placerat consequat id porttitor enim. Penatibus elit magnis eros curae euismod. Justo eu tempus lacus pretium aenean finibus aenean. Libero imperdiet proin donec pulvinar aenean. Malesuada nascetur tincidunt dictumst est vivamus at magna vestibulum. Quam elementum facilisis; velit molestie fames vel. Rutrum non lobortis, taciti eleifend duis commodo.\n\n",
+          "mode": "markdown"
+        },
+        "pluginVersion": "11.6.0-82840",
+        "title": "",
+        "type": "text"
+      }
+    ],
+    "preload": false,
+    "schemaVersion": 41,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "3. Dashboards Practices",
+    "weekStart": ""
+  }

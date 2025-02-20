@@ -1,0 +1,64 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 53,
+    "links": [],
+    "panels": [
+      {
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 20,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "# 4. Terraforming Practices\n\nIt is recommended to use Terraform to create alerts.\nTeams can optionally use terraform for other Grafana resources.\n\nIf you have issues, please contact the hero in the #observability channel.\n\n## Alert Examples \n\nEach team will know which alerts are applicable to their teams and alerting thresholds that are appropriate.\n\nTeams can reference the following other teams' github repos for examples of how to write great tf alerts:\n* [IAM squad alert examples](https://www.github.com)\n* [DB squad alert examples](https://www.github.com)\n\nNote: \nYour team is unique and may need mattis leo egestas vitae pretium? Elit mi odio eros lacus tortor varius natoque lorem. Torquent facilisi eget primis nisi pretium placerat per at. Dapibus semper luctus senectus maecenas urna lectus hendrerit aliquam. Elit diam libero penatibus eros nunc natoque turpis parturient felis. Lacinia libero nisi pulvinar tristique adipiscing integer augue. Faucibus vitae nostra habitant at nullam sapien. At urna urna magnis convallis dapibus conubia metus condimentum. Ac ut sapien ex sagittis odio lectus facilisi ut.\n\nTerraform internal practices:\nRefer to our [internal wiki]() on our tf practices including safeguarding state, using tf tooling, etc.\n",
+          "mode": "markdown"
+        },
+        "pluginVersion": "11.6.0-82840",
+        "title": "",
+        "type": "text"
+      }
+    ],
+    "preload": false,
+    "schemaVersion": 41,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "4. Terraforming Grafana",
+    "weekStart": ""
+  }

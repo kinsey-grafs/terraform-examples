@@ -2,8 +2,8 @@
 
 This repo sets up the following resources:
 
-1. Alert Folder
-2. blah
+1. Alerts:  folder, rules, contacts, notification template
+2. Dashboard: folder, dashboards
 
 ## Prerequisites
 

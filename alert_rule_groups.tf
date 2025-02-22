@@ -1,3 +1,8 @@
+resource "grafana_data_source" "my_data_source" {
+  name = "TestData"
+  type = "testdata"
+}
+
 resource "grafana_rule_group" "random-walk-alerts-group" {
   name             = "My Alert Rules"
   folder_uid       = grafana_folder.team_A_folder.uid

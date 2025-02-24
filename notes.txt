@@ -1,0 +1,106 @@
+test 1:
+
+1:
+token permissions: full admin, nothing else specified
+leave everthing uncommented (including dashboard TF files)
+- taa, tad several times - everything just works
+
+2:
+step permissions down to just "alerting"
+[wait before testing?]
+- taa: see failures on folders and datasoures
+- review in UI - note that Contact Points and Notification Templates need page refresh
+- tad: should be able to delete everything that was created
+
+3: 
+leave permissions at alerting
+commment out the dashboards files
+- taa
+- output:
+
+Error: failed to create folder: [POST /folders][403] createFolderForbidden 
+{"message":"You'll need additional permissions to perform this action. Permissions needed: folders:create"}
+
+Error: [POST /datasources][403] addDataSourceForbidden
+{"message":"You'll need additional permissions to perform this action. Permissions needed: datasources:create"}
+
+
+-----
+- try tad at this point
+
+- add permissions folder:create
+- taa
+
+problems at this point:
+
+alert folder:		no TF error, but the UI doesn't show my folder
+alert rule group:	^^
+alert rule:			^^
+team alias:			succeeded
+custom template:	succeeded
+datasource: 		TF shows failure - permissions (should we even be creating this)
+dashboard folder:	(still commented)
+dashboard: 			(still commented)
+
+
+-----
+- try tad
+
+problems at this point: now we get to this:
+
+Error: error reading folder with ID`0:bedyukalgzcw0f`: 
+[DELETE /folders/{folder_uid}][403] deleteFolderForbidden 
+{"message":"You'll need additional permissions to perform this action. Permissions needed: folders:delete"}
+
+The folder seems to have been created with this set of permissions
+We can't see it in the UI
+We can't delete it
+
+
+-----
+try: move permissions back to full admin, then tad
+- folder can be deleted at this point
+
+
+What are our recommendations at this point?
+How would a team deal with this? Would they have to get Central Olly involved?
+How long would that take?
+What does this do for the customer's impression of working with Grafana Cloud?
+
+
+
+Theories:
+
+- a folder created but with no alert groups/rules in it is not visible in the UI:
+https://grafana.zendesk.com/agent/tickets/125583
+
+- why can't the user just delete it, if they were able to create it
+
+
+
+
+
+
+
+API/Scripting ideas
+
+run terraform
+
+go to the swagger UI:
+https://danstadler1.grafana.net/swagger
+
+callout: schema and authorization
+
+show a call 
+show that you can copy the CURL command to the command line
+show that you can use this URL to import the API into Postman
+- https://danstadler1.grafana.net/public/api-merged.json
+
+use it:
+
+get all folders
+- use jq to find the new folder, and get its UID
+
+get folder by UID
+- show that you can also get it by ID
+

@@ -1,7 +1,36 @@
+# original from source code
+# resource "grafana_data_source" "my_data_source" {
+#   name = "TestData"
+#   type = "testdata"
+# }
+
+
+# first:
+# terraform import grafana_data_source.my_data_source dee23ft6d9szkb
+
 resource "grafana_data_source" "my_data_source" {
-  name = "TestData"
+  name = "aaa_TestData"
   type = "testdata"
+  uid  = "dee23ft6d9szkb"
+  lifecycle {
+    prevent_destroy = true
+  }
 }
+
+/*
+to delete everything except the datasource: 
+
+tf apply -destroy \
+-target="grafana_folder.team_A_folder" \
+-target="grafana_rule_group.random-walk-alerts-group" \
+-target="grafana_message_template.team_message_template_name" \
+-target="grafana_contact_point.team-alias" \
+-target="grafana_message_template.team_message_template_name" 
+
+*/
+
+
+
 
 resource "grafana_rule_group" "random-walk-alerts-group" {
   name             = "My Alert Rules"

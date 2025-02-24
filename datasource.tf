@@ -11,7 +11,7 @@ Then, do a normal terraform apply on the whole project.
 Note that the DS resource below has a lifecycle entry to prevent TF from destroying it.
 
 So to delete all the resources, we can't just do
-  terraform apply -delete
+  terraform apply -destroy
 
 We can do it like this:
 

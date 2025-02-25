@@ -5,12 +5,12 @@ resource "grafana_rule_group" "node_cpu_seconds_total" {
   # that it's running in cloud, so it just includes it by default.
   # org_id           = 1
 
-  name             = "node_cpu_seconds_total"
+  name             = "CPU alerts"
   folder_uid       = grafana_folder.team_A_folder.uid
   interval_seconds = 60
 
   rule {
-    name      = "node CPU"
+    name      = var.CPU_alert_name
     condition = "C"
 
     data {
@@ -21,12 +21,13 @@ resource "grafana_rule_group" "node_cpu_seconds_total" {
         to   = 0
       }
 
-	  # hardcoding this in our example, so we can just focus on alerts, not datasources
+	  # Hardcoding this in our example, so we can just focus on alerts, not datasources
       datasource_uid = "grafanacloud-prom"
 
-	  # every datasource (type, not instance) has its own "model" - this is an example 
-	  # for a Prometheus datasource.
-      model          = "{\"datasource\":{\"type\":\"prometheus\",\"uid\":\"grafanacloud-prom\"},\"editorMode\":\"code\",\"expr\":\"sum(rate(node_cpu_seconds_total{}[$__rate_interval]) )\",\"hide\":false,\"instant\":true,\"intervalMs\":1000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":false,\"refId\":\"A\"}"
+	  # Every datasource (type, not instance) has its own "model"
+	  # - this is an example for a Prometheus datasource.
+	  # We pull this from a variable.
+      model          = var.CPU_alert_query_model
 
     }
     data {
